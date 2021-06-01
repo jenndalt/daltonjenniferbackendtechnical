@@ -118,11 +118,34 @@ public class CashRegister {
         if (balancingRemaining >= denominationValue) {
             for (int i = numberOfBillsPerDenomination; i > 0; i--) {
                 balancingRemaining = balancingRemaining -  denominationValue;
-                cashDrawer.put(denominationValue, i);
+                if (balancingRemaining >= 0) {
+                    cashDrawer.put(denominationValue, i - 1);
+                    return balancingRemaining;
+                } else {
+
+                }
             }
         }
         calculateSum();
         return balancingRemaining;
+
+//        int numberOfBillsPerDenomination = cashDrawer.get(denominationValue);
+//        if (balancingRemaining >= denominationValue) {
+//            for (int i = numberOfBillsPerDenomination; i > 0; i--) {
+////                balancingRemaining = balancingRemaining -  denominationValue;
+//                if ( balancingRemaining -  denominationValue > 0) {
+//                    cashDrawer.put(denominationValue, i);
+//                    System.out.println("denominiaton: " + denominationValue + " , index: " + i);
+//                    balancingRemaining = balancingRemaining -  denominationValue;
+//
+//                } else {
+//                    return balancingRemaining;
+//                }
+//            }
+//        }
+//        calculateSum();
+//        return balancingRemaining;
+
         //        double numberToSubtract = Math.floor(balancingRem/aining / billValue);
 //        System.out.println("number to subtract: " + numberToSubtract + ", bill value " + billValue);
 //        Integer numSubtract = (int) numberToSubtract;
