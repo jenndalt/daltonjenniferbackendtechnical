@@ -60,4 +60,12 @@ public class CashRegisterTest {
         String expected = "$5 0 0 1 0 0 ";
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void quitSetsBooleanToTrue() {
+        boolean expected = true;
+        cashRegister.setQuit(true);
+        boolean actual = cashRegister.isQuit();
+        assertEquals(expected, actual);
+    }
 }
